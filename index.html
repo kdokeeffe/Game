@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Halloween Hello World</title>
+<style>
+ body{margin:0;height:100vh;overflow:hidden;text-align:center;
+      font-family:Arial;background:#241036;color:white;transition:background .5s}
+ h1{position:absolute;left:50%;top:25%;font-size:50px;color:#ff9500;
+    transform:translate(-50%,-50%);transition:left .6s,top .6s,transform .6s}
+ button{margin-top:65vh;padding:15px 25px;font-size:18px;background:#76ff03;
+        border:0;border-radius:12px;cursor:pointer}
+ .ghost{position:absolute;font-size:60px;animation:float 4s infinite alternate}
+ @keyframes float{from{left:5%;top:5%}to{left:80%;top:65%}}
+</style>
+</head>
+<body>
+
+<div class="ghost">👻</div>
+<h1 id="hello">🎃 Hello World! 🎃</h1>
+<p>My spooky first web page!</p>
+<button onclick="spook()">👻 Change & Bounce!</button>
+
+<script>
+function spook(){
+ const colours=["#241036","#541388","#B22D00","#083D0C","#001D3D","#6A040F"];
+ document.body.style.background=colours[Math.floor(Math.random()*colours.length)];
+ const h=document.getElementById("hello");
+ h.style.left=(15+Math.random()*70)+"%";
+ h.style.top=(10+Math.random()*50)+"%";
+ h.style.transform="translate(-50%,-50%) rotate("+(Math.random()*40-20)+"deg)";
+}
+</script>
+</body>
+</html>
